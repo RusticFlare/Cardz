@@ -3,30 +3,38 @@ package uk.rusticflare.cardz;
 /**
  * Created by j_d_b on 27/08/2016.
  */
-public class Card  {
+public class Card {
 
-    private Value value;
-    private Suit suit;
+	private Value value;
+	private Suit suit;
 
-    public Card(Value v, Suit s) {
-    	value = v;
-    	suit = s;
-    }
+	public Card(Value v, Suit s) {
+		value = v;
+		suit = s;
+	}
 
-    public Value getValue() {
-        return value;
-    }
+	public Value getValue() {
+		return value;
+	}
 
-    public Suit getSuit() {
-        return suit;
-    }
-    
-    @Override
+	public Suit getSuit() {
+		return suit;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s of %s", value.name(),
+				suit.name());
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((suit == null) ? 0 : suit.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
+		result = prime * result
+				+ ((suit == null) ? 0 : suit.hashCode());
+		result = prime * result
+				+ ((value == null) ? 0 : value.hashCode());
 		return result;
 	}
 

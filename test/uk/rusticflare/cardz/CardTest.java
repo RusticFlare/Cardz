@@ -10,8 +10,10 @@ public class CardTest {
 
 	@Test
 	public void constructorTest() {
-		Card card = new Card(ACE,SPADES);
-		
-		assertThat(card).hasValue(ACE).hasSuit(SPADES);
+		Card card = new Card(ACE, SPADES);
+
+		assertThat(card).hasValue(ACE).hasSuit(SPADES)
+				.hasToString(String.format("%s of %s",
+						ACE.name(), SPADES.name()));
 	}
 }

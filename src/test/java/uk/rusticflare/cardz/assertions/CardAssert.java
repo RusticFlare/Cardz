@@ -3,34 +3,27 @@ package uk.rusticflare.cardz.assertions;
 import org.assertj.core.api.AbstractAssert;
 
 import uk.rusticflare.cardz.Card;
-import uk.rusticflare.cardz.Suit;
-import uk.rusticflare.cardz.Value;
 
-public class CardAssert
-		extends AbstractAssert<CardAssert, Card> {
+public abstract class CardAssert<S extends CardAssert<S, A>, A extends Card>
+		extends AbstractAssert<S, A> {
 
-	public CardAssert hasValue(Value expected) {
-		if (actual.value != expected)
-			failWithMessage(
-					"Expected value <%s>, but was <%s>",
-					expected.name(), actual.value.name());
+	public S isJoker() {
+		if (!actual.isJoker())
+			failWithMessage("Expected JOKER, but was <%s>",
+					actual.toString());
 		return myself;
 	}
 
-	public CardAssert hasSuit(Suit expected) {
-		if (actual.suit != expected)
+	public S isNotJoker() {
+		if (actual.isJoker())
 			failWithMessage(
-					"Expected suit <%s>, but was <%s>",
-					expected.name(), actual.value.name());
+					"Expected card not to be a JOKER, but it was");
 		return myself;
 	}
 
-	private CardAssert(Card actual) {
-		super(actual, CardAssert.class);
-	}
-
-	public static CardAssert assertThat(Card actual) {
-		return new CardAssert(actual);
+	protected CardAssert(A actual, Class<?> selfType) {
+		super(actual, selfType);
+		as("Card: %s", actual.toString());
 	}
 
 }

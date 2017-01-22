@@ -2,7 +2,7 @@ package uk.rusticflare.cardz;
 
 public interface Deck {
 
-	public Card takeTopCard();
+	public StandardCard takeTopCard();
 
 	public void shuffle();
 

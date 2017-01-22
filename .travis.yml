@@ -9,9 +9,9 @@ notifications:
 
 addons:
   sonarqube:
-    
+
 script:
-  - sonar-scanner
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

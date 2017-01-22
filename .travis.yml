@@ -7,6 +7,9 @@ notifications:
   email:
     on_failure: change # default: always
 
+addons:
+  sonarqube:
+    
 script:
   - sonar-scanner
 

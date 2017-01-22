@@ -2,8 +2,6 @@ package uk.rusticflare.cardz;
 
 public final class Joker extends Card {
 
-	private final static String JOKER = "JOKER";
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -22,7 +20,7 @@ public final class Joker extends Card {
 
 	@Override
 	public String toString() {
-		return JOKER;
+		return "JOKER";
 	}
 
 }

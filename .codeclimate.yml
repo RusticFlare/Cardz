@@ -3,5 +3,5 @@ engines:
   fixme:
     enabled: true
 ratings:
-  paths: []
+  paths: *.java
 exclude_paths: []

@@ -7,5 +7,11 @@ notifications:
   email:
     on_failure: change # default: always
 
+addons:
+  sonarqube:
+    
+script:
+  - sonar-scanner
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)

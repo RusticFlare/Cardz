@@ -3,22 +3,14 @@ package uk.rusticflare.cardz;
 /**
  * Created by j_d_b on 27/08/2016.
  */
-public class Card {
+public final class Card {
 
-	private Value value;
-	private Suit suit;
+	public final Value value;
+	public final Suit suit;
 
 	public Card(Value v, Suit s) {
 		value = v;
 		suit = s;
-	}
-
-	public Value getValue() {
-		return value;
-	}
-
-	public Suit getSuit() {
-		return suit;
 	}
 
 	@Override

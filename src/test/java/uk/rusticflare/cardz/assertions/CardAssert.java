@@ -10,20 +10,20 @@ public class CardAssert
 		extends AbstractAssert<CardAssert, Card> {
 
 	public CardAssert hasValue(Value expected) {
-		if (actual.getValue() != expected)
+		if (actual.value != expected)
 			failWithMessage(
 					"Expected value <%s>, but was <%s>",
 					expected.name(),
-					actual.getValue().name());
+					actual.value.name());
 		return myself;
 	}
 
 	public CardAssert hasSuit(Suit expected) {
-		if (actual.getSuit() != expected)
+		if (actual.suit != expected)
 			failWithMessage(
 					"Expected suit <%s>, but was <%s>",
 					expected.name(),
-					actual.getValue().name());
+					actual.value.name());
 		return myself;
 	}
 

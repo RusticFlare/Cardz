@@ -3,7 +3,7 @@ package uk.rusticflare.cardz;
 public abstract class Card {
 
 	public boolean isJoker() {
-		return (this instanceof Joker);
+		return this instanceof Joker;
 	}
 
 	@Override

@@ -24,7 +24,7 @@ public class FiftyTwoCardDeckTest {
 	public void dealCardTest() {
 		FiftyTwoCardDeck deck = new FiftyTwoCardDeck();
 
-		Card card = deck.dealCard();
+		Card card = deck.takeTopCard();
 
 		assertThat(deck).hasSize(51).doesNotContain(card);
 	}

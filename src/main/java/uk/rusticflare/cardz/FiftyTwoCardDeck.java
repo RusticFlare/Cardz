@@ -1,14 +1,14 @@
 package uk.rusticflare.cardz;
 
 import java.util.Collections;
-import java.util.Stack;
+import java.util.LinkedList;
 
 public class FiftyTwoCardDeck implements Deck {
 
-	Stack<Card> deck;
+	LinkedList<Card> deck;
 
 	public FiftyTwoCardDeck() {
-		deck = new Stack<>();
+		deck = new LinkedList<>();
 		for (Value value : Value.values()) {
 			for (Suit suit : Suit.values()) {
 				deck.push(new Card(value, suit));
@@ -18,7 +18,7 @@ public class FiftyTwoCardDeck implements Deck {
 	}
 
 	@Override
-	public Card dealCard() {
+	public Card takeTopCard() {
 		return deck.pop();
 	}
 

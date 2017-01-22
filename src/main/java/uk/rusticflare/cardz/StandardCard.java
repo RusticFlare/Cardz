@@ -3,12 +3,12 @@ package uk.rusticflare.cardz;
 /**
  * Created by j_d_b on 27/08/2016.
  */
-public final class Card {
+public final class StandardCard {
 
 	public final Value value;
 	public final Suit suit;
 
-	public Card(Value v, Suit s) {
+	public StandardCard(Value v, Suit s) {
 		value = v;
 		suit = s;
 	}
@@ -38,7 +38,7 @@ public final class Card {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Card other = (Card) obj;
+		StandardCard other = (StandardCard) obj;
 		if (suit != other.suit)
 			return false;
 		if (value != other.value)

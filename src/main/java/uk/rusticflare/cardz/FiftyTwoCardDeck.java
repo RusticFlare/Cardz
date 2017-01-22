@@ -5,20 +5,20 @@ import java.util.LinkedList;
 
 public class FiftyTwoCardDeck implements Deck {
 
-	LinkedList<Card> deck;
+	LinkedList<StandardCard> deck;
 
 	public FiftyTwoCardDeck() {
 		deck = new LinkedList<>();
 		for (Value value : Value.values()) {
 			for (Suit suit : Suit.values()) {
-				deck.push(new Card(value, suit));
+				deck.push(new StandardCard(value, suit));
 			}
 		}
 		shuffle();
 	}
 
 	@Override
-	public Card takeTopCard() {
+	public StandardCard takeTopCard() {
 		return deck.pop();
 	}
 
@@ -31,7 +31,7 @@ public class FiftyTwoCardDeck implements Deck {
 		return deck.size();
 	}
 
-	public boolean contains(Card card) {
+	public boolean contains(StandardCard card) {
 		return deck.contains(card);
 	}
 

@@ -2,7 +2,7 @@ package uk.rusticflare.cardz.assertions;
 
 import org.assertj.core.api.AbstractAssert;
 
-import uk.rusticflare.cardz.Card;
+import uk.rusticflare.cardz.StandardCard;
 import uk.rusticflare.cardz.FiftyTwoCardDeck;
 
 public class FiftyTwoCardDeckAssert extends
@@ -16,7 +16,7 @@ public class FiftyTwoCardDeckAssert extends
 		return myself;
 	}
 
-	public FiftyTwoCardDeckAssert contains(Card expected) {
+	public FiftyTwoCardDeckAssert contains(StandardCard expected) {
 		if (!actual.contains(expected))
 			failWithMessage(
 					"Expected to contain <%s>, but was didn't",
@@ -25,7 +25,7 @@ public class FiftyTwoCardDeckAssert extends
 	}
 
 	public FiftyTwoCardDeckAssert doesNotContain(
-			Card expected) {
+			StandardCard expected) {
 		if (actual.contains(expected))
 			failWithMessage(
 					"Expected to not contain <%s>, but did",

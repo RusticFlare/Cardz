@@ -15,7 +15,7 @@ public class FiftyTwoCardDeckTest {
 		for (Value value : Value.values()) {
 			for (Suit suit : Suit.values()) {
 				assertThat(deck)
-						.contains(new Card(value, suit));
+						.contains(new StandardCard(value, suit));
 			}
 		}
 	}
@@ -24,7 +24,7 @@ public class FiftyTwoCardDeckTest {
 	public void dealCardTest() {
 		FiftyTwoCardDeck deck = new FiftyTwoCardDeck();
 
-		Card card = deck.takeTopCard();
+		StandardCard card = deck.takeTopCard();
 
 		assertThat(deck).hasSize(51).doesNotContain(card);
 	}

@@ -2,14 +2,14 @@ package uk.rusticflare.cardz.assertions;
 
 import org.assertj.core.api.AbstractAssert;
 
-import uk.rusticflare.cardz.Card;
+import uk.rusticflare.cardz.StandardCard;
 import uk.rusticflare.cardz.Suit;
 import uk.rusticflare.cardz.Value;
 
-public class CardAssert
-		extends AbstractAssert<CardAssert, Card> {
+public class StandardCardAssert
+		extends AbstractAssert<StandardCardAssert, StandardCard> {
 
-	public CardAssert hasValue(Value expected) {
+	public StandardCardAssert hasValue(Value expected) {
 		if (actual.value != expected)
 			failWithMessage(
 					"Expected value <%s>, but was <%s>",
@@ -17,7 +17,7 @@ public class CardAssert
 		return myself;
 	}
 
-	public CardAssert hasSuit(Suit expected) {
+	public StandardCardAssert hasSuit(Suit expected) {
 		if (actual.suit != expected)
 			failWithMessage(
 					"Expected suit <%s>, but was <%s>",
@@ -25,12 +25,12 @@ public class CardAssert
 		return myself;
 	}
 
-	private CardAssert(Card actual) {
-		super(actual, CardAssert.class);
+	private StandardCardAssert(StandardCard actual) {
+		super(actual, StandardCardAssert.class);
 	}
 
-	public static CardAssert assertThat(Card actual) {
-		return new CardAssert(actual);
+	public static StandardCardAssert assertThat(StandardCard actual) {
+		return new StandardCardAssert(actual);
 	}
 
 }

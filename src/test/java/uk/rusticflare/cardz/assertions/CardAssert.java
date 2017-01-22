@@ -13,8 +13,7 @@ public class CardAssert
 		if (actual.value != expected)
 			failWithMessage(
 					"Expected value <%s>, but was <%s>",
-					expected.name(),
-					actual.value.name());
+					expected.name(), actual.value.name());
 		return myself;
 	}
 
@@ -22,8 +21,7 @@ public class CardAssert
 		if (actual.suit != expected)
 			failWithMessage(
 					"Expected suit <%s>, but was <%s>",
-					expected.name(),
-					actual.value.name());
+					expected.name(), actual.value.name());
 		return myself;
 	}
 

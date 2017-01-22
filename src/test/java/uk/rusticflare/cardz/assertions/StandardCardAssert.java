@@ -1,13 +1,11 @@
 package uk.rusticflare.cardz.assertions;
 
-import org.assertj.core.api.AbstractAssert;
-
 import uk.rusticflare.cardz.StandardCard;
 import uk.rusticflare.cardz.Suit;
 import uk.rusticflare.cardz.Value;
 
-public class StandardCardAssert
-		extends AbstractAssert<StandardCardAssert, StandardCard> {
+public class StandardCardAssert extends
+		CardAssert<StandardCardAssert, StandardCard> {
 
 	public StandardCardAssert hasValue(Value expected) {
 		if (actual.value != expected)
@@ -29,7 +27,8 @@ public class StandardCardAssert
 		super(actual, StandardCardAssert.class);
 	}
 
-	public static StandardCardAssert assertThat(StandardCard actual) {
+	public static StandardCardAssert assertThat(
+			StandardCard actual) {
 		return new StandardCardAssert(actual);
 	}
 

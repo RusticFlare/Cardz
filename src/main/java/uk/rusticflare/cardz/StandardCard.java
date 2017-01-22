@@ -3,7 +3,7 @@ package uk.rusticflare.cardz;
 /**
  * Created by j_d_b on 27/08/2016.
  */
-public final class StandardCard {
+public final class StandardCard extends Card {
 
 	public final Value value;
 	public final Suit suit;
@@ -45,4 +45,5 @@ public final class StandardCard {
 			return false;
 		return true;
 	}
+
 }

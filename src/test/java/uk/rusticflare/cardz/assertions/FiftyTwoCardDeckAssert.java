@@ -1,9 +1,10 @@
 package uk.rusticflare.cardz.assertions;
 
 import org.assertj.core.api.AbstractAssert;
+import org.assertj.core.api.Assertions;
 
-import uk.rusticflare.cardz.StandardCard;
 import uk.rusticflare.cardz.FiftyTwoCardDeck;
+import uk.rusticflare.cardz.StandardCard;
 
 public class FiftyTwoCardDeckAssert extends
 		AbstractAssert<FiftyTwoCardDeckAssert, FiftyTwoCardDeck> {
@@ -16,11 +17,11 @@ public class FiftyTwoCardDeckAssert extends
 		return myself;
 	}
 
-	public FiftyTwoCardDeckAssert contains(StandardCard expected) {
-		if (!actual.contains(expected))
-			failWithMessage(
-					"Expected to contain <%s>, but was didn't",
-					expected.toString());
+	public FiftyTwoCardDeckAssert contains(
+			StandardCard... expected) {
+		Assertions.assertThat(actual.toArray())
+				.as(FiftyTwoCardDeck.class.getSimpleName())
+				.contains(expected);
 		return myself;
 	}
 
@@ -36,6 +37,7 @@ public class FiftyTwoCardDeckAssert extends
 	private FiftyTwoCardDeckAssert(
 			FiftyTwoCardDeck actual) {
 		super(actual, FiftyTwoCardDeckAssert.class);
+		as(FiftyTwoCardDeck.class.getSimpleName());
 	}
 
 	public static FiftyTwoCardDeckAssert assertThat(

@@ -15,13 +15,13 @@ public class StandardCardTest {
 		StandardCard card = new StandardCard(ACE, SPADES);
 
 		assertThat(card).hasValue(ACE).hasSuit(SPADES)
-				.hasToString(String.format("%s of %s",
-						ACE.name(), SPADES.name()));
+				.isNotJoker().hasToString("ACE of SPADES");
 	}
 
 	@Test
 	public void equalsContract() {
-		EqualsVerifier.forClass(StandardCard.class).verify();
+		EqualsVerifier.forClass(StandardCard.class)
+				.verify();
 	}
 
 }

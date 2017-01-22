@@ -35,4 +35,8 @@ public class FiftyTwoCardDeck implements Deck {
 		return deck.contains(card);
 	}
 
+	public StandardCard[] toArray() {
+		return deck.toArray(new StandardCard[0]);
+	}
+
 }

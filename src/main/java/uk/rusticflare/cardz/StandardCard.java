@@ -6,6 +6,7 @@ package uk.rusticflare.cardz;
 public final class StandardCard extends Card {
 
 	public final Value value;
+
 	public final Suit suit;
 
 	public StandardCard(Value v, Suit s) {

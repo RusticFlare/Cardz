@@ -1,9 +1,13 @@
 package uk.rusticflare.cardz;
 
-public interface Deck {
+public interface Deck<C extends Card> {
 
-	public StandardCard takeTopCard();
+	public C takeTopCard();
 
 	public void shuffle();
+
+	public C[] toArray();
+
+	public int size();
 
 }

@@ -18,19 +18,18 @@ public class FiftyTwoCardDeckAssert extends
 	}
 
 	public FiftyTwoCardDeckAssert contains(
-			StandardCard... expected) {
+			StandardCard... values) {
 		Assertions.assertThat(actual.toArray())
 				.as(FiftyTwoCardDeck.class.getSimpleName())
-				.contains(expected);
+				.contains(values);
 		return myself;
 	}
 
 	public FiftyTwoCardDeckAssert doesNotContain(
-			StandardCard expected) {
-		if (actual.contains(expected))
-			failWithMessage(
-					"Expected to not contain <%s>, but did",
-					expected.toString());
+			StandardCard... values) {
+		Assertions.assertThat(actual.toArray())
+				.as(FiftyTwoCardDeck.class.getSimpleName())
+				.doesNotContain(values);
 		return myself;
 	}
 

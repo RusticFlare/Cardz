@@ -1,6 +1,6 @@
 package uk.rusticflare.cardz;
 
-import static uk.rusticflare.cardz.assertions.FiftyTwoCardDeckAssert.assertThat;
+import static uk.rusticflare.cardz.FiftyTwoCardDeckAssert.assertThat;
 
 import java.util.LinkedList;
 

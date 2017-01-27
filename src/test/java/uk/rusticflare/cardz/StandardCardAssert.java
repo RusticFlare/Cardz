@@ -1,4 +1,4 @@
-package uk.rusticflare.cardz.assertions;
+package uk.rusticflare.cardz;
 
 import uk.rusticflare.cardz.StandardCard;
 import uk.rusticflare.cardz.Suit;

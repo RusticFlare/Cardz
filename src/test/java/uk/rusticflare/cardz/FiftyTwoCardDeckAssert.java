@@ -1,4 +1,4 @@
-package uk.rusticflare.cardz.assertions;
+package uk.rusticflare.cardz;
 
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.api.Assertions;

@@ -3,7 +3,6 @@ package uk.rusticflare.cardz;
 import org.junit.Test;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
-import uk.rusticflare.cardz.assertions.JokerAssert;
 
 public class JokerTest {
 

@@ -1,8 +1,8 @@
 package uk.rusticflare.cardz;
 
+import static uk.rusticflare.cardz.StandardCardAssert.assertThat;
 import static uk.rusticflare.cardz.Suit.SPADES;
 import static uk.rusticflare.cardz.Value.ACE;
-import static uk.rusticflare.cardz.assertions.StandardCardAssert.assertThat;
 
 import org.junit.Test;
 

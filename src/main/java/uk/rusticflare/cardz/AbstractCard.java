@@ -2,10 +2,6 @@ package uk.rusticflare.cardz;
 
 public abstract class AbstractCard {
 
-	public boolean isJoker() {
-		return this instanceof Joker;
-	}
-
 	@Override
 	public abstract String toString();
 

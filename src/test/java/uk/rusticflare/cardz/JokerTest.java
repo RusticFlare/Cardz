@@ -1,5 +1,7 @@
 package uk.rusticflare.cardz;
 
+import static uk.rusticflare.cardz.CardzAssertions.assertThat;
+
 import org.junit.Test;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
@@ -10,8 +12,7 @@ public class JokerTest {
 	public void constructorTest() {
 		Joker joker = new Joker();
 
-		JokerAssert.assertThat(joker).isJoker()
-				.hasToString("JOKER");
+		assertThat(joker).isJoker().hasToString("JOKER");
 	}
 
 	@Test

@@ -1,13 +1,16 @@
 package uk.rusticflare.cardz;
 
-import org.assertj.core.api.AbstractAssert;
-import org.assertj.core.api.Assertions;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import uk.rusticflare.cardz.FiftyTwoCardDeck;
-import uk.rusticflare.cardz.StandardCard;
+import org.assertj.core.api.AbstractAssert;
 
 public class FiftyTwoCardDeckAssert extends
 		AbstractAssert<FiftyTwoCardDeckAssert, FiftyTwoCardDeck> {
+
+	public FiftyTwoCardDeckAssert(FiftyTwoCardDeck actual) {
+		super(actual, FiftyTwoCardDeckAssert.class);
+		as(FiftyTwoCardDeck.class.getSimpleName());
+	}
 
 	public FiftyTwoCardDeckAssert hasSize(int expected) {
 		if (actual.size() != expected)
@@ -19,7 +22,7 @@ public class FiftyTwoCardDeckAssert extends
 
 	public FiftyTwoCardDeckAssert contains(
 			StandardCard... values) {
-		Assertions.assertThat(actual.toArray())
+		assertThat(actual.toArray())
 				.as(FiftyTwoCardDeck.class.getSimpleName())
 				.contains(values);
 		return myself;
@@ -27,21 +30,10 @@ public class FiftyTwoCardDeckAssert extends
 
 	public FiftyTwoCardDeckAssert doesNotContain(
 			StandardCard... values) {
-		Assertions.assertThat(actual.toArray())
+		assertThat(actual.toArray())
 				.as(FiftyTwoCardDeck.class.getSimpleName())
 				.doesNotContain(values);
 		return myself;
-	}
-
-	private FiftyTwoCardDeckAssert(
-			FiftyTwoCardDeck actual) {
-		super(actual, FiftyTwoCardDeckAssert.class);
-		as(FiftyTwoCardDeck.class.getSimpleName());
-	}
-
-	public static FiftyTwoCardDeckAssert assertThat(
-			FiftyTwoCardDeck actual) {
-		return new FiftyTwoCardDeckAssert(actual);
 	}
 
 }

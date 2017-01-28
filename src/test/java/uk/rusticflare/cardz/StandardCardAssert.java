@@ -1,11 +1,11 @@
 package uk.rusticflare.cardz;
 
-import uk.rusticflare.cardz.StandardCard;
-import uk.rusticflare.cardz.Suit;
-import uk.rusticflare.cardz.Value;
-
 public class StandardCardAssert extends
 		AbstractCardAssert<StandardCardAssert, StandardCard> {
+
+	public StandardCardAssert(StandardCard actual) {
+		super(actual, StandardCardAssert.class);
+	}
 
 	public StandardCardAssert hasValue(Value expected) {
 		if (actual.value != expected)
@@ -21,15 +21,6 @@ public class StandardCardAssert extends
 					"Expected suit <%s>, but was <%s>",
 					expected.name(), actual.value.name());
 		return myself;
-	}
-
-	private StandardCardAssert(StandardCard actual) {
-		super(actual, StandardCardAssert.class);
-	}
-
-	public static StandardCardAssert assertThat(
-			StandardCard actual) {
-		return new StandardCardAssert(actual);
 	}
 
 }

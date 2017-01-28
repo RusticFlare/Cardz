@@ -34,6 +34,8 @@ public class FiftyTwoCardDeckTest {
 
 		StandardCard card = deck.takeTopCard();
 
+		assertThat(card).isNotNull();
+
 		assertThat(deck).hasSize(51).doesNotContain(card);
 	}
 

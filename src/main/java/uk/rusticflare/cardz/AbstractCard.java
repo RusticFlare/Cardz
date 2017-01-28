@@ -1,6 +1,6 @@
 package uk.rusticflare.cardz;
 
-public abstract class Card {
+public abstract class AbstractCard {
 
 	public boolean isJoker() {
 		return this instanceof Joker;

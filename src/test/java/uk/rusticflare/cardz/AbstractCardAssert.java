@@ -2,9 +2,7 @@ package uk.rusticflare.cardz;
 
 import org.assertj.core.api.AbstractAssert;
 
-import uk.rusticflare.cardz.Card;
-
-public abstract class CardAssert<S extends CardAssert<S, A>, A extends Card>
+public abstract class AbstractCardAssert<S extends AbstractCardAssert<S, A>, A extends AbstractCard>
 		extends AbstractAssert<S, A> {
 
 	public S isJoker() {
@@ -17,11 +15,12 @@ public abstract class CardAssert<S extends CardAssert<S, A>, A extends Card>
 	public S isNotJoker() {
 		if (actual.isJoker())
 			failWithMessage(
-					"Expected card not to be a JOKER, but it was");
+					"Expected the card not to be a JOKER, but it was");
 		return myself;
 	}
 
-	protected CardAssert(A actual, Class<?> selfType) {
+	protected AbstractCardAssert(A actual,
+			Class<?> selfType) {
 		super(actual, selfType);
 		as("Card: %s", actual.toString());
 	}

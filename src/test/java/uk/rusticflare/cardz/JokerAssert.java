@@ -3,7 +3,7 @@ package uk.rusticflare.cardz;
 import uk.rusticflare.cardz.Joker;
 
 public class JokerAssert
-		extends CardAssert<JokerAssert, Joker> {
+		extends AbstractCardAssert<JokerAssert, Joker> {
 
 	public static JokerAssert assertThat(Joker actual) {
 		return new JokerAssert(actual);

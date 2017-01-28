@@ -3,7 +3,7 @@ package uk.rusticflare.cardz;
 /**
  * Created by j_d_b on 27/08/2016.
  */
-public final class StandardCard extends Card {
+public final class StandardCard extends AbstractCard {
 
 	public final Value value;
 

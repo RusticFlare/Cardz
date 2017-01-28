@@ -5,7 +5,7 @@ import uk.rusticflare.cardz.Suit;
 import uk.rusticflare.cardz.Value;
 
 public class StandardCardAssert extends
-		CardAssert<StandardCardAssert, StandardCard> {
+		AbstractCardAssert<StandardCardAssert, StandardCard> {
 
 	public StandardCardAssert hasValue(Value expected) {
 		if (actual.value != expected)

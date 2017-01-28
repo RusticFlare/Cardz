@@ -1,6 +1,6 @@
 package uk.rusticflare.cardz;
 
-public final class Joker extends AbstractCard {
+public final class Joker extends AbstractPlayingCard {
 
 	@Override
 	public boolean equals(Object obj) {

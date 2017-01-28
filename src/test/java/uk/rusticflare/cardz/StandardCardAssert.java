@@ -1,7 +1,7 @@
 package uk.rusticflare.cardz;
 
 public class StandardCardAssert extends
-		AbstractCardAssert<StandardCardAssert, StandardCard> {
+		AbstractPlayingCardAssert<StandardCardAssert, StandardCard> {
 
 	public StandardCardAssert(StandardCard actual) {
 		super(actual, StandardCardAssert.class);

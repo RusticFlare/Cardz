@@ -9,9 +9,9 @@ public class CardzAssertions extends Assertions {
 		return new FiftyTwoCardDeckAssert(actual);
 	}
 
-	public static StandardCardAssert assertThat(
-			StandardCard actual) {
-		return new StandardCardAssert(actual);
+	public static StandardPlayingCardAssert assertThat(
+			StandardPlayingCard actual) {
+		return new StandardPlayingCardAssert(actual);
 	}
 
 	public static JokerAssert assertThat(Joker actual) {

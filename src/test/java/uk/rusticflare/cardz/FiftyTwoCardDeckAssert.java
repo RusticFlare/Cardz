@@ -21,7 +21,7 @@ public class FiftyTwoCardDeckAssert extends
 	}
 
 	public FiftyTwoCardDeckAssert contains(
-			StandardCard... values) {
+			StandardPlayingCard... values) {
 		assertThat(actual.toArray())
 				.as(FiftyTwoCardDeck.class.getSimpleName())
 				.contains(values);
@@ -29,7 +29,7 @@ public class FiftyTwoCardDeckAssert extends
 	}
 
 	public FiftyTwoCardDeckAssert doesNotContain(
-			StandardCard... values) {
+			StandardPlayingCard... values) {
 		assertThat(actual.toArray())
 				.as(FiftyTwoCardDeck.class.getSimpleName())
 				.doesNotContain(values);

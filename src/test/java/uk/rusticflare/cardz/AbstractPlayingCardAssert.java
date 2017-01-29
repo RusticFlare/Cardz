@@ -1,6 +1,6 @@
 package uk.rusticflare.cardz;
 
-public class AbstractPlayingCardAssert<S extends AbstractPlayingCardAssert<S, A>, A extends AbstractPlayingCard>
+public abstract class AbstractPlayingCardAssert<S extends AbstractPlayingCardAssert<S, A>, A extends AbstractPlayingCard>
 		extends AbstractCardAssert<S, A> {
 
 	public AbstractPlayingCardAssert(A actual,

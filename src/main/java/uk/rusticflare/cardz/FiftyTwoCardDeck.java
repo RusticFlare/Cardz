@@ -4,22 +4,22 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public class FiftyTwoCardDeck
-		implements Deck<StandardCard> {
+		implements Deck<StandardPlayingCard> {
 
-	private LinkedList<StandardCard> deck;
+	private LinkedList<StandardPlayingCard> deck;
 
 	public FiftyTwoCardDeck() {
 		deck = new LinkedList<>();
-		for (Value value : Value.values()) {
-			for (Suit suit : Suit.values()) {
-				deck.push(new StandardCard(value, suit));
+		for (PlayingCardValue value : PlayingCardValue.values()) {
+			for (PlayingCardSuit suit : PlayingCardSuit.values()) {
+				deck.push(new StandardPlayingCard(value, suit));
 			}
 		}
 		shuffle();
 	}
 
 	@Override
-	public StandardCard takeTopCard() {
+	public StandardPlayingCard takeTopCard() {
 		return deck.pop();
 	}
 
@@ -34,8 +34,8 @@ public class FiftyTwoCardDeck
 	}
 
 	@Override
-	public StandardCard[] toArray() {
-		return deck.toArray(new StandardCard[0]);
+	public StandardPlayingCard[] toArray() {
+		return deck.toArray(new StandardPlayingCard[0]);
 	}
 
 }

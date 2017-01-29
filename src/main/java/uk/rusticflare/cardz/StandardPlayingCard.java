@@ -1,13 +1,13 @@
 package uk.rusticflare.cardz;
 
-public final class StandardCard
+public final class StandardPlayingCard
 		extends AbstractPlayingCard {
 
-	public final Value value;
+	public final PlayingCardValue value;
 
-	public final Suit suit;
+	public final PlayingCardSuit suit;
 
-	public StandardCard(Value v, Suit s) {
+	public StandardPlayingCard(PlayingCardValue v, PlayingCardSuit s) {
 		value = v;
 		suit = s;
 	}
@@ -37,7 +37,7 @@ public final class StandardCard
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		StandardCard other = (StandardCard) obj;
+		StandardPlayingCard other = (StandardPlayingCard) obj;
 		if (suit != other.suit)
 			return false;
 		if (value != other.value)

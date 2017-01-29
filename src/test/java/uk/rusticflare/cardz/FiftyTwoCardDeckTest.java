@@ -12,27 +12,27 @@ public class FiftyTwoCardDeckTest {
 	public void constructorTest() {
 		FiftyTwoCardDeck deck = new FiftyTwoCardDeck();
 
-		StandardCard[] standard52Cards = getStandard52Cards();
+		StandardPlayingCard[] standard52Cards = getStandard52Cards();
 
 		assertThat(deck).hasSize(52)
 				.contains(standard52Cards);
 	}
 
-	private static StandardCard[] getStandard52Cards() {
-		LinkedList<StandardCard> cards = new LinkedList<>();
-		for (Value value : Value.values()) {
-			for (Suit suit : Suit.values()) {
-				cards.add(new StandardCard(value, suit));
+	private static StandardPlayingCard[] getStandard52Cards() {
+		LinkedList<StandardPlayingCard> cards = new LinkedList<>();
+		for (PlayingCardValue value : PlayingCardValue.values()) {
+			for (PlayingCardSuit suit : PlayingCardSuit.values()) {
+				cards.add(new StandardPlayingCard(value, suit));
 			}
 		}
-		return cards.toArray(new StandardCard[0]);
+		return cards.toArray(new StandardPlayingCard[0]);
 	}
 
 	@Test
 	public void dealCardTest() {
 		FiftyTwoCardDeck deck = new FiftyTwoCardDeck();
 
-		StandardCard card = deck.takeTopCard();
+		StandardPlayingCard card = deck.takeTopCard();
 
 		assertThat(card).isNotNull();
 

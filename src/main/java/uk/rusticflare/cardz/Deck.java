@@ -1,13 +1,12 @@
 package uk.rusticflare.cardz;
 
-public interface Deck<C extends AbstractCard> {
+import java.util.Deque;
 
-	public C takeTopCard();
+public interface Deck<C extends AbstractCard>
+		extends Deque<C> {
 
-	public void shuffle();
+	void shuffle();
 
-	public C[] toArray();
-
-	public int size();
+	C dealCard();
 
 }

@@ -4,11 +4,6 @@ import org.assertj.core.api.Assertions;
 
 public class CardzAssertions extends Assertions {
 
-	public static FiftyTwoCardDeckAssert assertThat(
-			FiftyTwoCardDeck actual) {
-		return new FiftyTwoCardDeckAssert(actual);
-	}
-
 	public static StandardPlayingCardAssert assertThat(
 			StandardPlayingCard actual) {
 		return new StandardPlayingCardAssert(actual);

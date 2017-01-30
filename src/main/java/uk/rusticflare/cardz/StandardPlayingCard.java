@@ -7,9 +7,10 @@ public final class StandardPlayingCard
 
 	public final PlayingCardSuit suit;
 
-	public StandardPlayingCard(PlayingCardValue v, PlayingCardSuit s) {
-		value = v;
-		suit = s;
+	public StandardPlayingCard(PlayingCardValue value,
+			PlayingCardSuit suit) {
+		this.value = value;
+		this.suit = suit;
 	}
 
 	@Override

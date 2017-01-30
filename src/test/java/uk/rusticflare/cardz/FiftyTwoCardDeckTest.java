@@ -1,8 +1,10 @@
 package uk.rusticflare.cardz;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static uk.rusticflare.cardz.CardzAssertions.assertThat;
 
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -12,27 +14,30 @@ public class FiftyTwoCardDeckTest {
 	public void constructorTest() {
 		FiftyTwoCardDeck deck = new FiftyTwoCardDeck();
 
-		StandardPlayingCard[] standard52Cards = getStandard52Cards();
+		Set<StandardPlayingCard> standard52Cards = getStandard52Cards();
 
 		assertThat(deck).hasSize(52)
-				.contains(standard52Cards);
+				.containsOnlyElementsOf(standard52Cards);
 	}
 
-	private static StandardPlayingCard[] getStandard52Cards() {
-		LinkedList<StandardPlayingCard> cards = new LinkedList<>();
-		for (PlayingCardValue value : PlayingCardValue.values()) {
-			for (PlayingCardSuit suit : PlayingCardSuit.values()) {
-				cards.add(new StandardPlayingCard(value, suit));
+	private static Set<StandardPlayingCard> getStandard52Cards() {
+		Set<StandardPlayingCard> cards = new HashSet<>();
+		for (PlayingCardValue value : PlayingCardValue
+				.values()) {
+			for (PlayingCardSuit suit : PlayingCardSuit
+					.values()) {
+				cards.add(new StandardPlayingCard(value,
+						suit));
 			}
 		}
-		return cards.toArray(new StandardPlayingCard[0]);
+		return cards;
 	}
 
 	@Test
 	public void dealCardTest() {
 		FiftyTwoCardDeck deck = new FiftyTwoCardDeck();
 
-		StandardPlayingCard card = deck.takeTopCard();
+		StandardPlayingCard card = deck.dealCard();
 
 		assertThat(card).isNotNull();
 
